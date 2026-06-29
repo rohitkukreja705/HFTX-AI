@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    tools:context=".activity.HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/bg_primary"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@id/include_ble_log_panel"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_title"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/qc_dp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/qc_text_0009"
+                android:textColor="@color/text_primary"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_ble_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="@string/qc_text_0011"
+                android:textColor="@color/text_primary"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_device_mac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/qc_text_0010"
+                android:textColor="@color/text_primary"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_battery_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_primary"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:text="80% Charging" />
+
+            <TextView
+                android:id="@+id/tv_firmware_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/text_primary"
+                android:textIsSelectable="true"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:text="Firmware Version: 1.0.0" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <com.qcwireless.sdksample.view.FunctionTypeItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ftiv_titleText="@string/qc_text_0101" />
+
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_scan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/qc_text_0002" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_reconnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_titleText="@string/qc_text_0003" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_disconnect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_titleText="@string/qc_text_0004" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_bt_pair"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_titleText="@string/qc_text_0005" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_unbind_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_titleText="@string/qc_text_0110" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_find_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_titleText="@string/qc_text_0108" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.qcwireless.sdksample.view.FunctionTypeItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ftiv_titleText="@string/qc_text_0014" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_health_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/title_health_settings" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_target_and_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/title_target_and_profile" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_display_and_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/title_display_and_device" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_notification"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/title_notification" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_advanced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_showDivider="false"
+                    app:fiv_titleText="@string/title_advanced" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <com.qcwireless.sdksample.view.FunctionTypeItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ftiv_titleText="@string/qc_text_0020" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_device_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/qc_text_0103" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.qcwireless.sdksample.view.FunctionTypeItemView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:ftiv_titleText="@string/qc_text_0017" />
+
+                <com.qcwireless.sdksample.view.FunctionItemView
+                    android:id="@+id/fiv_via_ble_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:fiv_showArrow="true"
+                    app:fiv_titleText="@string/qc_text_0018" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/include_ble_log_panel"
+        layout="@layout/layout_ble_log_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include layout="@layout/log_float_button" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
